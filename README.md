@@ -1,5 +1,7 @@
 # Migrate from Evernote into DayOne
 
+![screenshot of Evernote app and DayOne app before and after migration](img/evernote_to_dayone.png)
+
 This script will migrate exported notes from Evernote into individual entries in DayOne.
 
 ## Prerequisites
@@ -29,10 +31,10 @@ Please report any Issues on GitHub! Your feedback is appreciated.
 
 ## Future Improvements
 Pull requests kindly accepted.
-* Banner Image
+* Copy entry location data
 * Allow users to specify folder other than "My Notes"
 * Test special cases like images in tables
-* handle cases with >10 images per entry
+* Handle cases with >10 images per entry
 
 ## Thanks
 * [Turndown](https://github.com/domchristie/turndown)
