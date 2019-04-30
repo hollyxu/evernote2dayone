@@ -28,6 +28,8 @@ fs.readdirSync(noteFolder).forEach(fileName => {
     return;
   }
 
+  console.log("Importing " + fileName);
+
   var contents = fs.readFileSync(noteFolder + fileName, 'utf8');
   var dom = new JSDOM(contents);
 
@@ -50,10 +52,11 @@ fs.readdirSync(noteFolder).forEach(fileName => {
   const urls = imgUrls.join(' ');
   const isoDate = new Date(createdDate).toISOString().replace('.000', '');
 
-  let execCommand = `dayone2 new "${markdown}" --isoDate "${isoDate}" --tags "EvernoteImport"`
+  let execCommand = `dayone2 new "${markdown}"`;
   if (urls.length > 0) {
     execCommand += ` --photos ${urls}`;
   }
+  execCommand += ` --isoDate "${isoDate}" --tags "EvernoteImport"`;
 
   execSync(execCommand, console.log);
 });
