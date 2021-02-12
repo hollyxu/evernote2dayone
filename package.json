@@ -1,0 +1,9 @@
+{
+  "name": "evernote2dayone",
+  "description": "",
+  "version": "1.0.0",
+  "dependencies": {
+    "turndown": "5.0.3",
+    "jsdom": "15.0.0"
+  }
+}
