@@ -45,7 +45,11 @@ fs.readdirSync(noteFolder).forEach(fileName => {
   let imgUrls = [];
   const imgTags = dom.window.document.getElementsByTagName('img');
   for (let i = 0; i < imgTags.length; i++) {
-    imgUrls.push('"' + noteFolder + decodeURIComponent(imgTags[i].src) + '"');
+    if (imgTags[i].src.indexOf('http') === 0) {
+      imgUrls.push(`"${decodeURIComponent(imgTags[i].src)}"`);
+    } else {
+      imgUrls.push('"' + noteFolder + decodeURIComponent(imgTags[i].src) + '"');
+    }
   }
 
   const markdown = turndownService.turndown(contents).replace(/"/g, '\\"');
